@@ -1,5 +1,5 @@
 {
-    "name": "Firestitch/php-quill-renderer",
+    "name": "firestitch/php-quill-renderer",
     "description": "Render quill insert deltas to HTML, Markdown and GitHub flavoured Markdown. Forked from deanblackborough/php-quill-renderer",
     "autoload": {
         "psr-4" : {
