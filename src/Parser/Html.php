@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace DBlackborough\Quill\Parser;
 
+use DBlackborough\Quill\Delta\Html\Background;
 use DBlackborough\Quill\Delta\Html\Bold;
 use DBlackborough\Quill\Delta\Html\Color;
 use DBlackborough\Quill\Delta\Html\Compound;
@@ -49,6 +50,7 @@ class Html extends Parse
 
         $this->class_delta_bold = Bold::class;
         $this->class_delta_color = Color::class;
+        $this->class_delta_background = Background::class;
         $this->class_delta_header = Header::class;
         $this->class_delta_image = Image::class;
         $this->class_delta_insert = Insert::class;
@@ -94,6 +96,10 @@ class Html extends Parse
 
                         case Options::ATTRIBUTE_COLOR:
                             $delta->addChild(new Color($insert, $attributes));
+                            break;
+
+                        case Options::ATTRIBUTE_BACKGROUND:
+                            $delta->addChild(new Background($insert, $attributes));
                             break;
 
                         case Options::ATTRIBUTE_ITALIC:
@@ -244,6 +250,20 @@ class Html extends Parse
     }
 
     /**
+     * Color Quill attribute, assign the relevant Delta class and set up the data
+     *
+     * @param array $quill
+     *
+     * @return void
+     */
+    public function attributeBackground(array $quill)
+    {
+        if (strlen($quill['attributes'][OPTIONS::ATTRIBUTE_BACKGROUND]) > 0) {
+            $this->deltas[] = new $this->class_delta_background($quill['insert'], $quill['attributes']);
+        }
+    }
+
+    /**
      * Script Quill attribute, assign the relevant Delta class and set up
      * the data, script could be sub or super
      *
@@ -295,6 +315,7 @@ class Html extends Parse
             }
 
             foreach ($quill['attributes'] as $attribute => $value) {
+
                 $delta->setAttribute($attribute, $value);
             }
 

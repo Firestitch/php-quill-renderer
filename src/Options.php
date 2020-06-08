@@ -43,6 +43,7 @@ class Options
 
     public const ATTRIBUTE_BOLD = 'bold';
     public const ATTRIBUTE_COLOR = 'color';
+    public const ATTRIBUTE_BACKGROUND = 'background';
     public const ATTRIBUTE_HEADER = 'header';
     public const ATTRIBUTE_ITALIC = 'italic';
     public const ATTRIBUTE_LINK = 'link';

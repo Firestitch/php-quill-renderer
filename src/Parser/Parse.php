@@ -54,6 +54,7 @@ abstract class Parse implements ParserInterface, ParserAttributeInterface
 
     protected $class_delta_bold;
     protected $class_delta_color;
+    protected $class_delta_background;
     protected $class_delta_header;
     protected $class_delta_image;
     protected $class_delta_insert;
@@ -261,6 +262,10 @@ abstract class Parse implements ParserInterface, ParserAttributeInterface
 
                                     case Options::ATTRIBUTE_COLOR:
                                         $this->attributeColor($quill);
+                                        break;
+
+                                    case Options::ATTRIBUTE_BACKGROUND:
+                                        $this->attributeBackground($quill);
                                         break;
 
                                     case Options::ATTRIBUTE_HEADER:

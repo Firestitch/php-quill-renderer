@@ -125,14 +125,23 @@ class Compound extends Delta
         }
 
         $element_attributes = '';
+        $style_element_attributes = [];
         foreach ($this->element_attributes as $attribute => $value) {
             if (is_string($attribute) && is_string($value)) {
-                if ($attribute == "color") {
-                    $element_attributes .= "style=\"{$attribute}: $value\"";
+                if ($attribute == "color" || $attribute == "background") {
+                    $style_element_attributes[] = "{$attribute}: $value";
                 } else {
                     $element_attributes .= "{$attribute}=\"{$value}\" ";
                 }
             }
+        }
+
+        if (count($style_element_attributes)) {
+
+            if(!$this->tags)
+                $this->tags[] = "span";
+
+            $element_attributes .= "style=\"" . join(";",$style_element_attributes) . "\" ";
         }
 
         foreach ($this->tags as $i => $tag) {
