@@ -1,12 +1,11 @@
 {
-    "name": "deanblackborough/php-quill-renderer",
-    "description": "Render quill insert deltas to HTML, Markdown and GitHub flavoured Markdown",
+    "name": "Firestitch/php-quill-renderer",
+    "description": "Render quill insert deltas to HTML, Markdown and GitHub flavoured Markdown. Forked from deanblackborough/php-quill-renderer",
     "autoload": {
         "psr-4" : {
             "DBlackborough\\Quill\\" : "src/"
         }
     },
-    "homepage": "http://www.transmute-coffee.com/php-quill-renderer.php",
     "keywords": [ "quill", "quilljs", "renderer", "delta", "parse", "html", "php", "markdown"],
     "authors": [
         {
