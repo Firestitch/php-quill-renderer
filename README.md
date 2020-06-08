@@ -5,6 +5,10 @@
 [![Build Status](https://travis-ci.org/deanblackborough/php-quill-renderer.svg?branch=master)](https://travis-ci.org/deanblackborough/php-quill-renderer)
 [![Coverage Status](https://coveralls.io/repos/github/deanblackborough/php-quill-renderer/badge.svg?branch=master)](https://coveralls.io/github/deanblackborough/php-quill-renderer?branch=master)
 
+# Firestitch Fork
+- Added suport of multiple style attributes
+- Added background Attribute
+
 # PHP Quill Renderer
 
 Render quill insert deltas to HTML, Markdown and GitHub flavoured Markdown.
